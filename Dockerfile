@@ -6,7 +6,7 @@ RUN apt-get install -y python-dateutil python-feedparser python-gdata python-lda
 
 RUN apt-get install -y moreutils
 
-RUN wget https://github.com/odoo/odoo/archive/8.0.0.tar.gz
+RUN wget -nv https://github.com/odoo/odoo/archive/8.0.0.tar.gz
 RUN tar -C /opt/ -zxvf 8.0.0.tar.gz  
 RUN useradd -d /home/odoo -m odoo
 RUN apt-get install python-setuptools
