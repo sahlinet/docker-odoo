@@ -15,4 +15,8 @@ This image is based on [philipsahli/ubuntu:trusty](https://registry.hub.docker.c
 # Use
 
 ## Start working with Odoo
-   Open [Odoo](http://localhost:10080) at the choosen port (10080 in `run.sh`). Username for the administrator account is `admin` (Password: `admin`). After the first login you should change the password and create your own user with suitable privileges in Odoo.
+   Open [Odoo](http://localhost:10080) at the choosen port (10080 in `run.sh`). 
+
+   * Odoo is started with the option `--without-demo=all`
+   * The first start will take a while because the tables are created in the database.
+   * Username for the administrator account is `admin` (Password: `admin`). After the first login you should change the password and create your own user with suitable privileges in Odoo.
