@@ -1,4 +1,4 @@
-FROM bl-ubuntu:trusty
+FROM philipsahli/ubuntu:trusty
 
 RUN apt-get update
 RUN apt-get upgrade -y
