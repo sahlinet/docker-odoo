@@ -1,1 +1,1 @@
-docker build -t docker-odoo .
+docker build -t philipsahli/docker-odoo .

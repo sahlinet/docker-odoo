@@ -1,0 +1,19 @@
+odoo-db:
+  image: 'philipsahli/postgresql-test:latest'
+  environment:
+    - DB_NAME=ooo
+    - DB_USER=odoo
+    - PASSWORD=transformer
+  ports:
+    - '5432'
+odoo:
+  image: philipsahli/docker-odoo
+  environment:
+    - DB_ENV_DB_NAME=odoo
+    - DB_ENV_DB_USER=odoo
+    - DB_ENV_PASSWORD=transformer
+  ports:
+    - '80'
+  links:
+    - 'odoo-db:db'
+
