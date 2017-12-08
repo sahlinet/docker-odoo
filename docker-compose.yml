@@ -13,7 +13,9 @@ odoo:
     - DB_ENV_DB_USER=odoo
     - DB_ENV_PASSWORD=transformer
   ports:
-    - '80'
+    - 8000:80
+  volumes:
+    - ./website_blog_qotd:/opt/odoo-8.0.0/addons/website_blog_qotd
   links:
     - 'odoo-db:db'
 

@@ -1,4 +1,4 @@
-FROM philipsahli/ubuntu-v2:trusty
+FROM philipsahli/ubuntu:trusty
 
 RUN apt-get update
 RUN apt-get install -y python-dateutil python-feedparser python-gdata python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil wget python-unittest2 python-mock python-jinja2 python-gevent 
