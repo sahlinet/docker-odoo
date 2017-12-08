@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="website_blog.opt_blog_rc_follow_us" name="Follow us now" priority="4" inherit_id="website_blog.index_right"
+            customize_show="True">
+            <xpath expr="//div[@id='blog_right_column']" position="inside">
+                <section class="mt32">
+                    <div class="rc_border">
+                        <t t-if="'question' in request.httprequest.path">
+                            <h4>Follow us now yeah on question</h4>
+                        </t>
+                        <t t-if="'question' not in request.httprequest.path">
+                            <h4>Follow us now yeah on default</h4>
+                        </t>
+                        <h4 t-field="request.httprequest.url"/>
+                        <h4>asdf</h4>
+                    </div>
+                    <h2 class="mt4">
+                        <a t-att-href="website.social_facebook" t-if="website.social_facebook"><i class="fa fa-facebook-square"/></a>
+                        <a t-att-href="website.social_twitter" t-if="website.social_twitter"><i class="fa fa-twitter"/></a>
+                        <a t-att-href="website.social_linkedin" t-if="website.social_linkedin"><i class="fa fa-linkedin"/></a>
+                        <a t-att-href="website.social_youtube" t-if="website.social_youtube"><i class="fa fa-youtube-play"/></a>
+                        <a t-att-href="website.social_googleplus" t-if="website.social_googleplus"><i class="fa fa-google-plus-square"/></a>
+                        <a t-att-href="website.social_github" t-if="website.social_github"><i class="fa fa-github"/></a>
+                    </h2>
+                </section>
+            </xpath>
+        </template>
+    </data>
+</openerp>

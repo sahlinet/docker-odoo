@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <template id="website_blog_qotd.blog_post_short" name="Custom Blog Post Template for QOTD" inherit_id="website_blog.opt_blog_post_short_tags">
+    <t t-call="website_blog.index">
+        <div class="oe_structure">
+            <section class="mb0">
+                <div class="container">
+                    <div class="row">
+                        <t t-call="website.pager" >
+                            <t t-set="classname">pull-right</t>
+                        </t>
+                        <div class="col-md-12 mb32 mt16 text-center">
+                            <h1 t-field="blog.name"/>
+                            <h3 class="text-muted" t-field="blog.subtitle"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2" t-ignore="True" id="main_column">
+
+                <div t-if="not blog_posts" class="container mb64">
+                  <p class="css_editable_hidden">
+                    <h1>Really no blog post yet?</h1>
+                  </p>
+                  <p groups="base.group_document_user">
+                    Click on "Content" on the top menu to write your first blog post.
+                  </p>
+                </div>
+
+                <div t-foreach="blog_posts" t-as="blog_post" class="mb32">
+
+                  <img class="img-circle pull-right mt16"
+                    t-att-src="website.image_url(blog_post.author_id, 'image_small')"
+                    style="width: 50px;"/>
+
+                  <a t-attf-href="/blog/#{ slug(blog_post.blog_id) }/post/#{ slug(blog_post) }">
+                      <h2 t-field="blog_post.name" class="mb4"/>
+                  </a>
+
+                  <div class="text-muted">
+                      <h4
+                        t-field="blog_post.subtitle"
+                        class="mb4 mt4"/>
+                    <div name='blog_post_data' class='mb0'>
+                         <span t-field="blog_post.author_id" style="display: inline-block;" t-field-options='{
+                                "widget": "contact",
+                                "fields": ["name"]
+                            }'/>
+                        &#5760; <span t-field="blog_post.create_date" t-field-options='{"format": "MMMM yyyy"}'/>
+                        <span t-if="len(blog_post.message_ids) &gt; 0">
+                            &#5760; <t t-esc="len(blog_post.message_ids)"/>
+                            <t t-if="len(blog_post.message_ids) &lt;= 1" >comment</t>
+                            <t t-if="len(blog_post.message_ids) > 1">comments</t>
+                        </span>
+
+                        <span t-if="not blog_post.website_published" class="label label-danger">not published</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="oe_structure"/>
+    </t>
+
+        </template>
+    </data>
+</openerp>
