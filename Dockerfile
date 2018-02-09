@@ -5,7 +5,7 @@ RUN apt-get install -y python-dateutil python-feedparser python-gdata python-lda
 
 RUN apt-get install -y moreutils
 
-RUN wget -nv https://nightly.odoo.com/8.0/nightly/src/odoo_8.0.latest.zip && unzip -c /opt/ -zxvf odoo_8.0.latest.zip && useradd -d /home/odoo -m odoo
+RUN wget -nv https://nightly.odoo.com/8.0/nightly/src/odoo_8.0.latest.zip && cd /opt &&  unzip odoo_8.0.latest.zip && useradd -d /home/odoo -m odoo
 RUN apt-get install python-setuptools
 RUN easy_install pip && pip install psycogreen==1.0 && pip install decorator==3.4.0 && pip install pyPdf && pip install passlib  && pip install requests
 ADD openerp-server.conf /etc/odoo/
