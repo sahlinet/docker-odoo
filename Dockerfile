@@ -15,7 +15,7 @@ RUN chmod 755 /startup_app.sh
 RUN mkdir -p /var/log/odoo && chown odoo:odoo /var/log/odoo && pip install j2cli
 
 # gdata
-RUN wget http://gdata-python-client.googlecode.com/files/gdata-2.0.18.tar.gz && tar -zxvf gdata* && cd gdata* && sudo python setup.py install && rm -rf gdata-*
+RUN wget https://pypi.python.org/packages/a8/70/bd554151443fe9e89d9a934a7891aaffc63b9cb5c7d608972919a002c03c/gdata-2.0.18.tar.gz#md5=13b6e6dd8f9e3e9a8e005e05a8329408 && tar -zxvf gdata* && cd gdata* && sudo python setup.py install && rm -rf gdata-*
 
 RUN apt-get install -y nginx
 ADD nginx_odoo.conf /etc/nginx/sites-enabled/
