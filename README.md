@@ -1,6 +1,6 @@
 # Description
 
-This image is based on [philipsahli/ubuntu:trusty](https://registry.hub.docker.com/u/philipsahli/ubuntu/) (with supervisor, sshd and newrelic agent).
+This image is based on [philipsahli/ubuntu:trusty](https://registry.hub.docker.com/u/philipsahli/ubuntu/).
 
 # Run
 
